@@ -1,0 +1,28 @@
+{
+  "name": "nd-tasks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "frog dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@farcaster/frame-sdk": "^0.0.32",
+    "@fastify/cors": "^11.0.1",
+    "dotenv": "^16.4.7",
+    "fastify": "^5.2.2",
+    "frog": "^0.18.3",
+    "googleapis": "^148.0.0",
+    "hono": "^4.7.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "typescript": "latest"
+  }
+}
