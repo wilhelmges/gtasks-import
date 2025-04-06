@@ -15,6 +15,7 @@
     "@farcaster/frame-sdk": "^0.0.32",
     "@fastify/cors": "^11.0.1",
     "dotenv": "^16.4.7",
+    "express": "^5.1.0",
     "fastify": "^5.2.2",
     "frog": "^0.18.3",
     "googleapis": "^148.0.0",
