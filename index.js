@@ -84,7 +84,7 @@ app.get('/callback', async (req, res) => {
 
     try {
         const { userId, taskListsWithTasks } = await getTaskLists(code);
-        res.json({
+        const tasks = {
             userId,
             taskLists: taskListsWithTasks.map(tasklist => ({
                 id: tasklist.id,
@@ -96,7 +96,8 @@ app.get('/callback', async (req, res) => {
                     //due: task.due,
                 })),
             })),
-        });
+        }
+        res.json(tasks);
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
