@@ -7,6 +7,7 @@ try {
   //console.log(str);
   const tasks = JSON.parse(str);
   console.log(tasks[1].title);
+  console.log(tasks[1].tasks);
 } catch (err) {
   console.error('Redis error:', err);
 } finally {

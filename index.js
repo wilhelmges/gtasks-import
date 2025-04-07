@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import { google } from 'googleapis';
+import client from './redis-client.js';
 
 dotenv.config();
 
@@ -97,6 +98,14 @@ app.get('/callback', async (req, res) => {
                 })),
             })),
         }
+        try {
+            await client.connect();
+            await client.set(userId, JSON.stringify(tasks.taskLists));
+          } catch (err) {
+            console.error('Redis error:', err);
+          } finally {
+            await client.quit();
+          }
         res.json(tasks);
     } catch (error) {
         res.status(500).json({ error: error.message });
